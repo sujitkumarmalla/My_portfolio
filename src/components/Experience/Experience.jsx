@@ -1,121 +1,104 @@
 import React from "react";
 
-
-
-
-
-
-
 export const Experience = () => {
+  const openCertificate = (file) => {
+    const url = `${import.meta.env.BASE_URL}certificate/${file}`;
+    window.open(url, "_blank");
+  };
+
   return (
-    <section
-      id="experience"
-      className="min-h-screen w-full bg-[#050414] relative overflow-hidden text-white"
-    >
-      {/* GRID BACKGROUND */}
-      <div
-        className="absolute inset-0 
-        bg-[linear-gradient(to_right,#ffffff14_1px,transparent_1px),
-        linear-gradient(to_bottom,#ffffff14_1px,transparent_1px)]
-        bg-[size:40px_40px] opacity-20"
-      />
+    <section className="min-h-screen w-full bg-[#050414] text-white px-6 py-24">
 
-      {/* PURPLE GLOW */}
-      <div
-        className="absolute left-[-150px] top-1/2 w-[400px] h-[400px]
-        bg-purple-600 rounded-full blur-[180px] opacity-40"
-      />
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        Experience
+      </h2>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
-        {/* HEADER */}
-        <div className="mb-20 relative flex items-center justify-center">
-          <div className="absolute left-0 text-purple-400 font-semibold text-lg md:text-xl tracking-wider">
-            mrsonu18
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white relative">
-            Experience
-            <span className="block mx-auto mt-3 w-16 h-[3px] bg-purple-500 rounded-full"></span>
-          </h2>
-        </div>
+        {/* OCAC */}
+        <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+          <img
+            src={`${import.meta.env.BASE_URL}internship/ocactower.jpg`}
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-6">
+            <h3 className="text-purple-400 text-xl font-semibold">
+              Core Java Intern
+            </h3>
+            <p className="text-gray-300 mt-2">OCAC, Bhubaneswar</p>
 
-        {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* OCAC */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 shadow-lg overflow-hidden">
-            <img
-              src="/internship/ocactower.jpg"
-              alt="OCAC"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-purple-400">
-                Core Java Intern
-              </h3>
-              <p className="text-gray-300 mt-2">
-                OCAC, Bhubaneswar
-              </p>
-             
-  <button
-  onClick={() => window.open("/certificates/ocac.pdf", "_blank")}
-  className="inline-block mt-4 text-sm text-purple-400 hover:underline"
->
-  View Certificate
-</button>
-
-
-
-            </div>
-          </div>
-
-          {/* CTTC */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 shadow-lg overflow-hidden">
-            <img
-              src="/internship/cttc.jpg"
-              alt="CTTC"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-purple-400">
-                Machine Learning Intern
-              </h3>
-              <p className="text-gray-300 mt-2">
-                CTTC, Bhubaneswar
-              </p>
-              <a
-                href="/certificate/cttc.pdf"
-                target="_blank"
-                className="inline-block mt-4 text-sm text-purple-400 hover:underline"
-              >
-                View Certificate
-              </a>
-            </div>
-          </div>
-
-          {/* NEXTWAVE */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 shadow-lg overflow-hidden">
-            <img
-              src="/internship/next_wave.png"
-              alt="next_wave"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-purple-400">
-                Generative AI Course
-              </h3>
-              <p className="text-gray-300 mt-2">
-                NextWave
-              </p>
-              <a
-                href="/certificate/nextwave.pdf"
-                target="_blank"
-                className="inline-block mt-4 text-sm text-purple-400 hover:underline"
-              >
-                View Certificate
-              </a>
-            </div>
+            <button
+              className="mt-4 border border-[#7C3AED] text-[#7C3AED] px-8 py-3 rounded-lg font-semibold hover:bg-[#7C3AED] hover:text-white transition-all shadow-md"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "certificate/java.pdf";
+                link.download = "Sujit_java.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
+              View Certificate
+            </button>
           </div>
         </div>
+
+        {/* CTTC */}
+        <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+          <img
+            src={`${import.meta.env.BASE_URL}internship/cttc.jpg`}
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-6">
+            <h3 className="text-purple-400 text-xl font-semibold">
+              Machine Learning Intern
+            </h3>
+            <p className="text-gray-300 mt-2">CTTC, Bhubaneswar</p>
+
+            <button
+              className="mt-4 border border-[#7C3AED] text-[#7C3AED] px-8 py-3 rounded-lg font-semibold hover:bg-[#7C3AED] hover:text-white transition-all shadow-md"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "certificate/aiml.pdf";
+                link.download = "Sujit_Aiml.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
+              View Certificate
+            </button>
+          </div>
+        </div>
+
+        {/* NEXTWAVE */}
+        <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+          <img
+            src={`${import.meta.env.BASE_URL}internship/next_wave.png`}
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-6">
+            <h3 className="text-purple-400 text-xl font-semibold">
+              Generative AI Course
+            </h3>
+            <p className="text-gray-300 mt-2">NextWave</p>
+
+            <button
+              className="mt-4 border border-[#7C3AED] text-[#7C3AED] px-8 py-3 rounded-lg font-semibold hover:bg-[#7C3AED] hover:text-white transition-all shadow-md"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "certificate/next_wave_com.pdf";
+                link.download = "Sujit_next_wave.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
+              View Certificate
+            </button>
+          </div>
+        </div>
+
       </div>
     </section>
   );
